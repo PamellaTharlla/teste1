@@ -1,0 +1,124 @@
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ff0000; /* Vermelho */
+  color: white;
+  min-height: 100vh;
+}
+
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Títulos */
+.titulo-principal {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.titulo-secundario {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Formulário de busca */
+.formulario-busca {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.select-busca, .input-busca {
+  padding: 0.8rem;
+  border: 2px solid white;
+  border-radius: 8px;
+  background-color: rgba(255,255,255,0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.input-busca::placeholder {
+  color: rgba(255,255,255,0.7);
+}
+
+.botao-busca {
+  padding: 0.8rem 1.8rem;
+  background-color: white;
+  color: #ff0000;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.botao-busca:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.botao-busca:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Cards de alimentos */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card-alimento {
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.card-alimento:hover {
+  transform: translateY(-5px);
+}
+
+.card-titulo {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.card-detalhes {
+  display: grid;
+  gap: 0.8rem;
+}
+
+/* Mensagens */
+.mensagem-erro {
+  color: #ffcc00;
+  background-color: rgba(0,0,0,0.5);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.sem-resultados {
+  text-align: center;
+  grid-column: 1 / -1;
+  font-size: 1.2rem;
+}
