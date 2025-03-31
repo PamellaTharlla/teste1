@@ -1,21 +1,18 @@
-
 'use client';
 import { useState, useEffect } from 'react';
-
 import './globals.css';
 
 export default function App() {
   const [filtro, setFiltro] = useState('');
   const [alimentos, setAlimentos] = useState([]);
 
-  // Função para buscar os alimentos
   const buscarAlimentos = async (e) => {
     e.preventDefault();
     try {
       let url = 'http://localhost:3000/';
-      
+     
       if (filtro) {
-        url = http://localhost:3000/nome/${filtro};
+        url = `http://localhost:3000/nome/${filtro}`;
       }
 
       const response = await fetch(url);
@@ -30,27 +27,25 @@ export default function App() {
     }
   };
 
-  // Função para excluir um alimento
   const excluirAlimento = async (id) => {
     try {
-      const response = await fetch(http://localhost:3000/${id}, {
+      const response = await fetch(`http://localhost:3000/${id}`, {
         method: 'DELETE',
       });
       if (!response.ok) {
         throw new Error('Erro ao excluir o alimento');
       }
-      // Atualiza a lista de alimentos após a exclusão
-      setAlimentos((prevAlimentos) =>
-        prevAlimentos.filter((alimento) => alimento.id !== id)
+      
+      setAlimentos((alimentosAnteriores) =>
+        alimentosAnteriores.filter((alimento) => alimento.id !== id)
       );
     } catch (error) {
       console.error('Erro ao excluir o alimento:', error);
     }
   };
 
-  // Requisição inicial para carregar os alimentos quando o componente for montado
   useEffect(() => {
-    const fetchInitialAlimentos = async () => {
+    const carregarAlimentos = async () => {
       try {
         const response = await fetch('http://localhost:3000/');
         if (!response.ok) {
@@ -63,8 +58,8 @@ export default function App() {
         setAlimentos([]);
       }
     };
-    
-    fetchInitialAlimentos();
+   
+    carregarAlimentos();
   }, []);
 
   return (
@@ -101,8 +96,8 @@ export default function App() {
                   <p><strong>Gordura:</strong> {alimento.gordura}g</p>
                 </div>
 
-                <button 
-                  onClick={() => excluirAlimento(alimento.id)} 
+                <button
+                  onClick={() => excluirAlimento(alimento.id)}
                   className="botao-excluir"
                 >
                   Excluir
@@ -117,3 +112,4 @@ export default function App() {
     </div>
   );
 }
+
