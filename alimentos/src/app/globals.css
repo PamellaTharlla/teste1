@@ -1,5 +1,4 @@
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -13,14 +12,14 @@ body {
   min-height: 100vh;
 }
 
-/* Container principal */
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-/* Títulos */
+
 .titulo-principal {
   font-size: 2.5rem;
   text-align: center;
@@ -33,7 +32,7 @@ body {
   margin-bottom: 1.5rem;
 }
 
-/* Formulário de busca */
+
 .formulario-busca {
   display: flex;
   gap: 1rem;
@@ -75,7 +74,7 @@ body {
   cursor: not-allowed;
 }
 
-/* Cards de alimentos */
+
 .grid-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -107,7 +106,7 @@ body {
   gap: 0.8rem;
 }
 
-/* Mensagens */
+
 .mensagem-erro {
   color: #ffcc00;
   background-color: rgba(0,0,0,0.5);
@@ -122,3 +121,16 @@ body {
   grid-column: 1 / -1;
   font-size: 1.2rem;
 }
+.botao-excluir {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+.botao-excluir:hover {
+  background-color: #d32f2f;
+} 
